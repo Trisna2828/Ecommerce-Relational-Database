@@ -1,6 +1,7 @@
 <h2>Description</h2>
 <h2>App Function List</h2>
 <h2>Database Design</h2>
+<img src="https://github.com/Trisna2828/Ecommerce-Relational-Database/blob/main/database_ecommerce.JPG" alt="" width="100%" height="auto">
 <h2>Create Table</h2>
 <pre>
     <code>
