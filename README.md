@@ -91,10 +91,10 @@
                 FOREIGN KEY Seller_id 
                 REFERENCES Seller(Seller_id) 
                 ON DELETE CASCADE,
-            Quantity smallint,
+            Quantity smallint DEFAULT 1,
             Price decimal(10,2) NOT NULL,
             Total_price decimal(10,2) NOT NULL,
-            To_purchase_status BOOLEAN
+            To_purchase_status BOOLEAN DEFAULT FALSE
         );
 
         CREATE TABLE Delivery_Status
@@ -120,6 +120,7 @@
     </code>
 </pre>
 <h2>Insert Data</h2>
+<p>On Progress</p>
 <h2>SQL Queries on Each Function</h2>
 <p>When Customer want to choose a product  by category (Groceries (GCR) for example)</p>
 <pre>
@@ -133,5 +134,8 @@
         WHERE Category_id = 'GCR'
     </code>
 </pre>
+<p>On Progress</p>
 <h2>Triggers</h2>
+<p>On Progress</p>
 <h2>SQL/T-SQL Functions</h2>
+<p>On Progress</p>
