@@ -4,6 +4,7 @@
 <h2>Create Table</h2>
 <pre>
     <code>
+        
         CREATE TABLE Seller
         (
             Seller_id VARCHAR(8) NOT NULL UNIQUE,
@@ -28,11 +29,11 @@
             Product_rating decimal(1,2),
             Price decimal(10,2),
             PRIMARY KEY (Product_id),
-            CONSTRAINT fk_seller
+            CONSTRAINT fk_Product_seller
                 FOREIGN KEY Seller_id 
                 REFERENCES Seller(Seller_id) 
                 ON DELETE CASCADE,
-            CONSTRAINT fk_product_category
+            CONSTRAINT fk_Product_category
                 FOREIGN KEY Category_id
                 REFERENCES Product_category(Category_id)
                 ON UPDATE CASCADE
@@ -57,19 +58,58 @@
             username VARCHAR(10) NOT NULL,
             user_address VARCHAR(50);
             email VARCHAR(30) NOT NULL,
-            CONSTRAINT fk_cart
+            CONSTRAINT fk_Customer_cart
                 FOREIGN KEY Cart_id 
                 REFERENCES Cart(Cart_id) 
                 ON UPDATE CASCADE,
-            CONSTRAINT fk_purchase
+            CONSTRAINT fk_Customer_purchase
                 FOREIGN KEY Purchase_id
                 REFERENCES Purchase(Purchase_id)
                 ON UPDATE CASCADE
         );
 
-        
+        CREATE TABLE Cart_item
+        (
+            CONSTRAINT fk_Cartitem_cart
+                FOREIGN KEY Cart_id 
+                REFERENCES Cart(Cart_id) 
+                ON DELETE CASCADE,
+            CONSTRAINT fk_Cartitem_product
+                FOREIGN KEY Product_id 
+                REFERENCES Product(Product_id) 
+                ON DELETE CASCADE,
+            CONSTRAINT fk_Cartitem_seller
+                FOREIGN KEY Seller_id 
+                REFERENCES Seller(Seller_id) 
+                ON DELETE CASCADE,
+            Quantity smallint,
+            Price decimal(10,2) NOT NULL,
+            Total_price decimal(10,2) NOT NULL,
+            To_purchase_status BOOLEAN
+        );
+
+        CREATE TABLE Delivery_Status
+        (
+            Delivery_id int(1) PRIMARY KEY,
+            Status VARCHAR(10)
+        );
+
+        CREATE TABLE Purchase_list
+        (
+            CONSTRAINT fk_Purchaselist_purchase
+                FOREIGN KEY Purchase_id 
+                REFERENCES Purchase(Purchase_id),
+            CONSTRAINT fk_Purchaselist_cart
+                FOREIGN KEY Cart_id 
+                REFERENCES Cart(Cart_id) 
+                ON DELETE CASCADE,
+            Date_payment datetime DEFAULT(get(date)),
+            CONSTRAINT fk_Purchaselist_delivery
+                FOREIGN KEY Delivery_id
+                REFERENCES Delivery_Status(Delivery_id) 
+        )
     </code>
 </pre>
 <h2>SQL Queries on Each Function</h2>
-<h2>C</h2>
-<h2>C</h2>
+<h2></h2>
+<h2></h2>
