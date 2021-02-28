@@ -1,5 +1,13 @@
 <h2>Description</h2>
+<p>This repository contains a small hands-on project on how Relational Database Management on ecommerce platform.</p>
 <h2>App Function List</h2>
+<ul>
+    <li>Customer can choose product by category</li>
+    <li>Customer can see his/her cart list</li>
+    <li>Customer can check/uncheck which item they would like to proceed to the payment process</li>
+    <li>Customer can see purchase history and status</li>
+    <li>Customer can search a product by its name and sort by the ratings</li>
+</ul>
 <h2>Database Design</h2>
 <img src="https://github.com/Trisna2828/Ecommerce-Relational-Database/blob/main/database_ecommerce.JPG" alt="" width="100%" height="auto">
 <h2>Create Table</h2>
@@ -111,6 +119,19 @@
         )
     </code>
 </pre>
+<h2>Insert Data</h2>
 <h2>SQL Queries on Each Function</h2>
-<h2></h2>
-<h2></h2>
+<p>When Customer want to choose a product  by category (Groceries (GCR) for example)</p>
+<pre>
+    <code>
+        SELECT Product_id, Product_name, Product_rating, Price, Product_category.Category_name, Seller.Seller_name
+        FROM Product
+        JOIN Product_category
+        ON Product.Category_id = Product_category.Category_id 
+        JOIN Seller
+        ON Product.Seller_id = Seller.Seller_id
+        WHERE Category_id = 'GCR'
+    </code>
+</pre>
+<h2>Triggers</h2>
+<h2>SQL/T-SQL Functions</h2>
