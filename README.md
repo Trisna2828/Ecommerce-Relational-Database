@@ -1,5 +1,5 @@
 <h2>Description</h2>
-<p>This repository contains a small hands-on project on how Relational Database Management on ecommerce platform.</p>
+<p>This repository contains a small hands-on project on how Relational Database Management on ecommerce platform. Still need to finish this later...</p>
 <h2>App Function List</h2>
 <ul>
     <li>Customer can choose product by category</li>
